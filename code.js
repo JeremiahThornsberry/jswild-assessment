@@ -73,7 +73,8 @@ function onLocationSuccess(data){
 
 function onLocationError(){
     let backupLocation = {latitude: 35.0456, longitude: -85.3097} // Chattanooga, TN
-    fetchFlickr(backupLocation)
+    let gal = new gallary(backupLocation)
+    gal.fetchFlickr()
 }
 
 navigator.geolocation.watchPosition(onLocationSuccess, onLocationError)
